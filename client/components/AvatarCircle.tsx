@@ -26,7 +26,6 @@ export function AvatarCircle({ name, size = 192, src, className }: AvatarCircleP
         )}
         style={{ width: dimension, height: dimension }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={name} className="w-full h-full object-cover" />
       </div>
     );
