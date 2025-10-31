@@ -62,7 +62,7 @@ export function ProjectCard({ project, className }: { project: Project; classNam
         {github && (
           <a href={github} target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="gap-1">
-              <GitHubLogoIcon /> GitHub
+              <Github className="h-4 w-4" /> GitHub
             </Button>
           </a>
         )}
