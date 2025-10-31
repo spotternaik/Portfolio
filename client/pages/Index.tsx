@@ -114,7 +114,7 @@ export default function Index() {
         </Section>
 
         {/* Hobbies */}
-        <Section id="hobbies" title="Hobbies">
+        <Section id="hobbies" title="Hobbies" theme="violet">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {HOBBIES.map((h) => (
               <HobbyCard key={h.title} title={h.title} emoji={h.emoji} description={h.description} />
