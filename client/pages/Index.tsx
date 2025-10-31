@@ -138,32 +138,45 @@ function Header() {
     { label: "Hobbies", href: "#hobbies" },
   ];
 
+  const scrollTo = (hash: string) => {
+    const id = hash.startsWith("#") ? hash.slice(1) : hash;
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // update hash without jumping
+      history.replaceState(null, "", `#${id}`);
+    } else {
+      // fallback
+      window.location.hash = hash;
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="#home" className="font-semibold tracking-tight">
+        <button onClick={() => scrollTo("#home")} className="font-semibold tracking-tight">
           {NAME}
-        </Link>
+        </button>
         <nav className="hidden md:flex items-center gap-1">
           {items.map((it) => (
-            <Link
+            <button
               key={it.href}
-              to={it.href}
+              onClick={() => scrollTo(it.href)}
               className={cn(
                 "rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent",
               )}
             >
               {it.label}
-            </Link>
+            </button>
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <Socials />
         </div>
         <div className="md:hidden">
-          <Link to="#projects">
+          <button onClick={() => scrollTo("#projects")}>
             <Button size="sm">Projects</Button>
-          </Link>
+          </button>
         </div>
       </div>
     </header>
