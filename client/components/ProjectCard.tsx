@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { Laptop, Bot, Layers, Brain, Code2 } from "lucide-react";
+import { Laptop, Bot, Layers, Brain, Code2, Github } from "lucide-react";
 
 export type Project = {
   title: string;
