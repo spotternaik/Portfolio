@@ -27,7 +27,7 @@ export default function Index() {
         <section id="home" className="relative grid place-items-center py-24 md:py-32">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_-20%,rgba(129,140,248,0.15),transparent_60%)]" />
           <div className="container relative grid place-items-center text-center">
-            <AvatarCircle name={NAME} className="mx-auto" />
+            <AvatarCircle name={NAME} className="mx-auto" src={PROFILE_IMAGE} />
             <h1 className="mt-8 text-3xl md:text-5xl font-extrabold tracking-tight">
               {NAME}
             </h1>
@@ -203,7 +203,7 @@ function EducationCard({
       )}
       <div className="mt-3 text-sm text-muted-foreground">
         <span>{period}</span>
-        <span className="mx-2">���</span>
+        <span className="mx-2">•</span>
         <span>{location}</span>
       </div>
     </div>
