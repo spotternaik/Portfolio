@@ -76,7 +76,7 @@ export default function Index() {
         </Section>
 
         {/* Experience */}
-        <Section id="experience" title="Experience">
+        <Section id="experience" title="Experience" theme="teal">
           <div className="space-y-6">
             <ExperienceItem
               role="Tech Consulting Intern"
