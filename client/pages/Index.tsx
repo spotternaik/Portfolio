@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ABOUT, HOBBIES, NAME, PROJECTS, ROLE, PROFILE_IMAGE } from "@/data/portfolio";
 import ProjectCard from "@/components/ProjectCard";
 import HobbyCard from "@/components/HobbyCard";
+import Socials from "@/components/Socials";
 
 function Section({ id, title, children, theme = 'default' }: { id: string; title: string; children: React.ReactNode; theme?: 'default' | 'indigo' | 'slate' | 'teal' | 'rose' | 'violet' }) {
   const themeMap: Record<string, string> = {
@@ -156,6 +157,9 @@ function Header() {
             </Link>
           ))}
         </nav>
+        <div className="hidden md:flex items-center gap-4">
+          <Socials />
+        </div>
         <div className="md:hidden">
           <Link to="#projects">
             <Button size="sm">Projects</Button>
@@ -224,8 +228,11 @@ function EducationCard({
 function Footer() {
   return (
     <footer className="border-t py-8">
-      <div className="container text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} {NAME}. All rights reserved.
+      <div className="container flex flex-col items-center gap-3 md:flex-row md:justify-between md:items-center text-sm text-muted-foreground">
+        <div>© {new Date().getFullYear()} {NAME}. All rights reserved.</div>
+        <div>
+          <Socials />
+        </div>
       </div>
     </footer>
   );
