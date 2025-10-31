@@ -21,10 +21,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 255 85% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 220 14% 96%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -103,8 +103,12 @@
     @apply border-border;
   }
 
+  html { scroll-behavior: smooth; }
+
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(1000px 400px at 50% -10%, hsl(var(--primary)/0.08), transparent 60%);
+    background-attachment: fixed;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
