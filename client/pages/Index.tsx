@@ -3,7 +3,7 @@ import AvatarCircle from "@/components/AvatarCircle";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ABOUT, HOBBIES, NAME, PROJECTS, ROLE } from "@/data/portfolio";
+import { ABOUT, HOBBIES, NAME, PROJECTS, ROLE, PROFILE_IMAGE } from "@/data/portfolio";
 import ProjectCard from "@/components/ProjectCard";
 import HobbyCard from "@/components/HobbyCard";
 
@@ -203,7 +203,7 @@ function EducationCard({
       )}
       <div className="mt-3 text-sm text-muted-foreground">
         <span>{period}</span>
-        <span className="mx-2">•</span>
+        <span className="mx-2">���</span>
         <span>{location}</span>
       </div>
     </div>
