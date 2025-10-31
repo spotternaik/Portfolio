@@ -7,9 +7,20 @@ import { ABOUT, HOBBIES, NAME, PROJECTS, ROLE, PROFILE_IMAGE } from "@/data/port
 import ProjectCard from "@/components/ProjectCard";
 import HobbyCard from "@/components/HobbyCard";
 
-function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+function Section({ id, title, children, theme = 'default' }: { id: string; title: string; children: React.ReactNode; theme?: 'default' | 'indigo' | 'slate' | 'teal' | 'rose' | 'violet' }) {
+  const themeMap: Record<string, string> = {
+    default: 'bg-transparent text-foreground',
+    indigo: 'bg-gradient-to-r from-indigo-50 via-white to-white text-foreground',
+    slate: 'bg-gradient-to-r from-slate-50 via-white to-white text-foreground',
+    teal: 'bg-gradient-to-r from-teal-50 via-white to-white text-foreground',
+    rose: 'bg-gradient-to-r from-rose-50 via-white to-white text-foreground',
+    violet: 'bg-gradient-to-r from-violet-50 via-white to-white text-foreground',
+  };
+
+  const classes = `${themeMap[theme]} scroll-mt-28 py-16 md:py-24`;
+
   return (
-    <section id={id} className="scroll-mt-28 py-16 md:py-24">
+    <section id={id} className={classes}>
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
         <div className="mt-6 md:mt-8">{children}</div>
