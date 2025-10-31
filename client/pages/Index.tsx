@@ -57,7 +57,7 @@ export default function Index() {
         </section>
 
         {/* About Me */}
-        <Section id="about" title="About Me">
+        <Section id="about" title="About Me" theme="indigo">
           <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
             {ABOUT}
           </p>
