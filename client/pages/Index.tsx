@@ -64,7 +64,7 @@ export default function Index() {
         </Section>
 
         {/* Projects */}
-        <Section id="projects" title="Projects">
+        <Section id="projects" title="Projects" theme="slate">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((p) => (
               <ProjectCard key={p.title} project={p} />)
