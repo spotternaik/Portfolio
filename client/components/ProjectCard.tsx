@@ -1,6 +1,20 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Laptop, Bot, Layers, Brain, Code2, Github } from "lucide-react";
+import {
+  Laptop,
+  Bot,
+  Layers,
+  Brain,
+  Code2,
+  Github,
+  Image,
+  Search,
+  Briefcase,
+  DollarSign,
+  Play,
+  Monitor,
+  Cpu,
+} from "lucide-react";
 
 export type Project = {
   title: string;
