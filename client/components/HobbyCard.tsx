@@ -7,7 +7,12 @@ export interface HobbyCardProps {
   className?: string;
 }
 
-export function HobbyCard({ title, emoji, description, className }: HobbyCardProps) {
+export function HobbyCard({
+  title,
+  emoji,
+  description,
+  className,
+}: HobbyCardProps) {
   return (
     <div
       className={cn(

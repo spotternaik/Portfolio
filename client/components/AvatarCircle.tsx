@@ -7,7 +7,12 @@ interface AvatarCircleProps {
   className?: string;
 }
 
-export function AvatarCircle({ name, size = 192, src, className }: AvatarCircleProps) {
+export function AvatarCircle({
+  name,
+  size = 192,
+  src,
+  className,
+}: AvatarCircleProps) {
   const initials = name
     .split(" ")
     .map((n) => n[0])

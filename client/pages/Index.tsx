@@ -3,19 +3,38 @@ import AvatarCircle from "@/components/AvatarCircle";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ABOUT, HOBBIES, NAME, PROJECTS, ROLE, PROFILE_IMAGE } from "@/data/portfolio";
+import {
+  ABOUT,
+  HOBBIES,
+  NAME,
+  PROJECTS,
+  ROLE,
+  PROFILE_IMAGE,
+} from "@/data/portfolio";
 import ProjectCard from "@/components/ProjectCard";
 import HobbyCard from "@/components/HobbyCard";
 import Socials from "@/components/Socials";
 
-function Section({ id, title, children, theme = 'default' }: { id: string; title: string; children: React.ReactNode; theme?: 'default' | 'indigo' | 'slate' | 'teal' | 'rose' | 'violet' }) {
+function Section({
+  id,
+  title,
+  children,
+  theme = "default",
+}: {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+  theme?: "default" | "indigo" | "slate" | "teal" | "rose" | "violet";
+}) {
   const themeMap: Record<string, string> = {
-    default: 'bg-transparent text-foreground',
-    indigo: 'bg-gradient-to-r from-indigo-50 via-white to-white text-foreground',
-    slate: 'bg-gradient-to-r from-slate-50 via-white to-white text-foreground',
-    teal: 'bg-gradient-to-r from-teal-50 via-white to-white text-foreground',
-    rose: 'bg-gradient-to-r from-rose-50 via-white to-white text-foreground',
-    violet: 'bg-gradient-to-r from-violet-50 via-white to-white text-foreground',
+    default: "bg-transparent text-foreground",
+    indigo:
+      "bg-gradient-to-r from-indigo-50 via-white to-white text-foreground",
+    slate: "bg-gradient-to-r from-slate-50 via-white to-white text-foreground",
+    teal: "bg-gradient-to-r from-teal-50 via-white to-white text-foreground",
+    rose: "bg-gradient-to-r from-rose-50 via-white to-white text-foreground",
+    violet:
+      "bg-gradient-to-r from-violet-50 via-white to-white text-foreground",
   };
 
   const classes = `${themeMap[theme]} scroll-mt-28 py-16 md:py-24`;
@@ -23,7 +42,9 @@ function Section({ id, title, children, theme = 'default' }: { id: string; title
   return (
     <section id={id} className={classes}>
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+          {title}
+        </h2>
         <div className="mt-6 md:mt-8">{children}</div>
       </div>
     </section>
@@ -36,14 +57,19 @@ export default function Index() {
       <Header />
       <main>
         {/* Home */}
-        <section id="home" className="relative grid place-items-center py-24 md:py-32">
+        <section
+          id="home"
+          className="relative grid place-items-center py-24 md:py-32"
+        >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_-20%,rgba(129,140,248,0.15),transparent_60%)]" />
           <div className="container relative grid place-items-center text-center">
             <AvatarCircle name={NAME} className="mx-auto" src={PROFILE_IMAGE} />
             <h1 className="mt-8 text-3xl md:text-5xl font-extrabold tracking-tight">
               {NAME}
             </h1>
-            <p className="mt-3 text-sm md:text-base text-muted-foreground">{ROLE}</p>
+            <p className="mt-3 text-sm md:text-base text-muted-foreground">
+              {ROLE}
+            </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link to="#projects">
                 <Button className="gap-2">
@@ -68,8 +94,8 @@ export default function Index() {
         <Section id="projects" title="Projects" theme="slate">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((p) => (
-              <ProjectCard key={p.title} project={p} />)
-            )}
+              <ProjectCard key={p.title} project={p} />
+            ))}
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
             Note: Provide GitHub URLs to attach them to the project cards.
@@ -118,7 +144,12 @@ export default function Index() {
         <Section id="hobbies" title="Hobbies" theme="violet">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {HOBBIES.map((h) => (
-              <HobbyCard key={h.title} title={h.title} emoji={h.emoji} description={h.description} />
+              <HobbyCard
+                key={h.title}
+                title={h.title}
+                emoji={h.emoji}
+                description={h.description}
+              />
             ))}
           </div>
         </Section>
@@ -154,7 +185,10 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <button onClick={() => scrollTo("#home")} className="font-semibold tracking-tight">
+        <button
+          onClick={() => scrollTo("#home")}
+          className="font-semibold tracking-tight"
+        >
           {NAME}
         </button>
         <nav className="hidden md:flex items-center gap-1">
@@ -204,7 +238,9 @@ function ExperienceItem({
           <p className="text-sm text-muted-foreground">{period}</p>
         </div>
       </div>
-      <p className="mt-3 text-sm md:text-base text-muted-foreground">{details}</p>
+      <p className="mt-3 text-sm md:text-base text-muted-foreground">
+        {details}
+      </p>
     </div>
   );
 }
@@ -226,9 +262,7 @@ function EducationCard({
     <div className="rounded-xl border p-5 md:p-6">
       <h3 className="text-base md:text-lg font-semibold">{school}</h3>
       <p className="mt-1 text-sm md:text-base">{degree}</p>
-      {meta && (
-        <p className="text-sm text-muted-foreground">{meta}</p>
-      )}
+      {meta && <p className="text-sm text-muted-foreground">{meta}</p>}
       <div className="mt-3 text-sm text-muted-foreground">
         <span>{period}</span>
         <span className="mx-2">•</span>
@@ -242,7 +276,9 @@ function Footer() {
   return (
     <footer className="border-t py-8">
       <div className="container flex flex-col items-center gap-3 md:flex-row md:justify-between md:items-center text-sm text-muted-foreground">
-        <div>© {new Date().getFullYear()} {NAME}. All rights reserved.</div>
+        <div>
+          © {new Date().getFullYear()} {NAME}. All rights reserved.
+        </div>
         <div>
           <Socials />
         </div>

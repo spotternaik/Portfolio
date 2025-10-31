@@ -66,7 +66,13 @@ function ProjectIcon({ icon }: { icon?: Project["iconKey"] }) {
   }
 }
 
-export function ProjectCard({ project, className }: { project: Project; className?: string }) {
+export function ProjectCard({
+  project,
+  className,
+}: {
+  project: Project;
+  className?: string;
+}) {
   const { title, description, tech = [], github, iconKey } = project;
   return (
     <div
