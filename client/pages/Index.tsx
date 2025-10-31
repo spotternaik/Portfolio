@@ -94,7 +94,7 @@ export default function Index() {
         </Section>
 
         {/* Education */}
-        <Section id="education" title="Education">
+        <Section id="education" title="Education" theme="rose">
           <div className="grid gap-6 md:grid-cols-2">
             <EducationCard
               school="University Of Visvesvaraya College Of Engineering"
