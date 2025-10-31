@@ -2,7 +2,7 @@ import type { Project } from "@/components/ProjectCard";
 
 export const NAME = "Drona Naik";
 export const ROLE = "Analyst · Full‑stack & AI";
-export const PROFILE_IMAGE: string | undefined = undefined;
+export const PROFILE_IMAGE = "https://cdn.builder.io/api/v1/image/assets%2Fc0646a626a564c289ab5eb482f0172bb%2F61b610dbd1514bf4ae2a239480c4d223?format=webp&width=800";
 
 export const ABOUT =
   "I am Drona, an Analyst passionate about Full‑stack development, Artificial Intelligence, Machine Learning, and Agentic AI.";
