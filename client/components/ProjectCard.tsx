@@ -21,7 +21,19 @@ export type Project = {
   description: string;
   tech?: string[];
   github?: string; // external URL (optional until provided)
-  iconKey?: "bot" | "layers" | "brain" | "laptop" | "code";
+  iconKey?:
+    | "bot"
+    | "layers"
+    | "brain"
+    | "laptop"
+    | "code"
+    | "image"
+    | "search"
+    | "briefcase"
+    | "dollar"
+    | "play"
+    | "monitor"
+    | "cpu";
 };
 
 function ProjectIcon({ icon }: { icon?: Project["iconKey"] }) {
@@ -35,6 +47,20 @@ function ProjectIcon({ icon }: { icon?: Project["iconKey"] }) {
       return <Brain className={cls} />;
     case "laptop":
       return <Laptop className={cls} />;
+    case "image":
+      return <Image className={cls} />;
+    case "search":
+      return <Search className={cls} />;
+    case "briefcase":
+      return <Briefcase className={cls} />;
+    case "dollar":
+      return <DollarSign className={cls} />;
+    case "play":
+      return <Play className={cls} />;
+    case "monitor":
+      return <Monitor className={cls} />;
+    case "cpu":
+      return <Cpu className={cls} />;
     default:
       return <Code2 className={cls} />;
   }
