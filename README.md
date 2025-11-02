@@ -1,6 +1,7 @@
 This repository now contains a static portfolio site for Drona.
 
 Files of interest in the root:
+
 - index.html
 - styles.css
 - app.js
